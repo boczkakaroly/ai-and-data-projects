@@ -19,6 +19,11 @@ To explore whether a football betting model can achieve consistent profitability
 
 ---
 
+### 📂 Project Files
+- [📄 Project Summary (PDF)](./Football_Data_Insights_Summary.pdf)
+- [📊 Power BI Dashboard (.pbix)](./Football_Predictions_Public.pbix)
+
+---
 ## 🧮 Dataset & Methodology
 - **Scope:** 494,274 matches (2019–2024) across nearly 300 competitions.  
 - **Source:** Primarily from [OddsPortal.com](https://www.oddsportal.com/), cross-checked with open football databases.  
