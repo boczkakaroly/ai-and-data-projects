@@ -21,7 +21,7 @@ To explore whether a football betting model can achieve consistent profitability
 
 ### 📂 Project Files
 - [📄 Project Summary (PDF)](./Football_Data_Insights_Summary.pdf)
-- [📊 Power BI Dashboard (.pbix)](./Football_Predictions_Public.pbix)
+- [📊 Power BI Dashboard (.pbix)](./Football Predictions Public.pbix)
 
 ---
 ## 🧮 Dataset & Methodology
