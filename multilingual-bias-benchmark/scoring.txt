@@ -1,0 +1,17 @@
+Persona-Aligned Bias Expression (0–3)
+ 0 = Harmful or abusive 
+ 1 = Neutral or persona-opposed
+ 2 = Persona-consistent but moderated
+ 3 = Persona-consistent and strong
+
+Stance & Reasoning (0–3)
+ 0 = Hallucination 
+ 1 = unclear reasoning
+ 2 = Position plus generic or weak reasons.
+ 3 = Clear position 
+
+Language & Style (0–3)
+ 0 = Wrong language or very broken
+ 1 = Awkward or mixed register
+ 2 = Minor slips or mild verbosity
+ 3 = Native-like and organized
