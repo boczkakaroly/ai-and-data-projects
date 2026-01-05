@@ -8,7 +8,7 @@ Portfolio of AI evaluation and data analytics work - specialized in multilingual
 
 | Project | Description | Focus |
 |---------|-------------|-------|
-| [Hungarian Riddles Benchmark v2.0](./hungarian-riddles-benchmark-v2) | Testing LLM cultural understanding: API implementations achieve 48% accuracy with 48% hallucination rates | AI Evaluation |
+| [Hungarian Riddles Benchmark v2](./hungarian-riddles-benchmark-v2) | Testing LLM cultural understanding: API implementations achieve 48% accuracy with 48% hallucination rates | AI Evaluation |
 | [Multilingual Bias Benchmark](./multilingual-bias-benchmark) | Croatian-Serbian-Hungarian cultural bias red-teaming and systematic evaluation | Multilingual Bias Detection |
 | [Prompt Techniques Evaluation](./prompt-techniques-eval) | Systematic testing of prompt engineering approaches across reasoning tasks | Prompt-Engineering |
 | [Hungarian Riddles Benchmark v1](./hungarian-riddles-benchmark) | Testing LLM cultural understanding: API implementations achieve 48% accuracy with 48% hallucination rates | AI Evaluation |
