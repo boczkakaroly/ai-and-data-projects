@@ -1,34 +1,37 @@
-# AI and Data Projects
 
-A collection of original, no-code AI and data projects by **Károly Boczka** — focused on evaluation, analytics, and cultural reasoning through practical, self-built benchmarks and datasets.
 
----
+# AI Evaluation & Data Analytics Projects
+
+Portfolio of AI evaluation and data analytics work - specialized in multilingual bias detection, model testing, and cultural reasoning assessment for underrepresented languages.
 
 ## 📂 Projects
 
 | Project | Description | Focus |
-|----------|--------------|--------|
-| [Football Data Insights](./football-data-insights) | Data analytics and probability modeling using Power BI | Data Analysis |
-| [Hungarian Riddles Benchmark](./hungarian-riddles-benchmark) | 100 Hungarian language and culture riddles challenging five LLMs side by side | Benchmarking |
-| [Prompt Techniques Evaluation](./prompt-techniques-eval) | Prompt Engineering: Solving Real-Life Dilemmas with Ten Prompting Techniques | Prompt Engineering |
-| [Multilingual Bias Benchmark](./multilingual-bias-benchmark) | Croatian–Serbian–Hungarian Cultural Bias Red-Teaming Benchmark and Evaluation | Bias Evaluation |
+|---------|-------------|-------|
+| [Multilingual Bias Benchmark](./multilingual-bias-benchmark) | Croatian-Serbian-Hungarian cultural bias red-teaming and systematic evaluation | Bias Detection |
+| [Prompt Techniques Evaluation](./prompt-techniques-eval) | Systematic testing of prompt engineering approaches across reasoning tasks | Model Testing |
+| [Hungarian Riddles Benchmark v1](./hungarian-riddles-benchmark) | Testing LLM cultural understanding: API implementations achieve 48% accuracy with 48% hallucination rates | AI Evaluation |
+| [Football Data Insights](./football-data-insights) | Large-scale statistical analysis: 500,000+ matches, 10M+ data points - probability modeling using Power BI and SQL | Data Analytics |
 
----
+## 🎯 Approach
 
-## 🧠 Approach
-- **No-code methods:** Excel, Power BI, ChatGPT, and structured prompt workflows  
-- **Evaluator mindset:** Focus on reasoning, bias, and transparency  
-- **Original datasets:** All benchmarks and results are independently designed  
+**AI Evaluation & Governance:**
+- Rigorous scoring frameworks, statistical validation, reproducible benchmarks
+- Cultural bias detection, hallucination analysis, systematic failure identification  
+- Original datasets for underrepresented languages and cultural contexts
 
----
+**Data Analytics:**
+- Statistical modeling 
+- Data visualization
+- Analytical reporting
+- Probability modeling
 
 ## 🌐 Connect
-- **LinkedIn:** [linkedin.com/in/karolyboczka](https://www.linkedin.com/in/karolyboczka/)
 
----
+- LinkedIn: [linkedin.com/in/karolyboczka](https://linkedin.com/in/karolyboczka)
+- Medium: [Research articles on AI & Data](https://medium.com/@boczkakaroly)
 
-### 🧠 License & Goodwill
+## 📄 License & Usage
+
 This work is free to use and share.  
-If so, mention me in goodwill — like buying me a virtual beer 🍺  
-
 © 2025 Károly Boczka
