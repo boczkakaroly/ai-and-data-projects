@@ -6,7 +6,8 @@ Multilingual AI Evaluator & Data Analyst — October 2025
 
 📘 Overview
 
-This project introduces a Hungarian benchmark evaluation designed to demonstrate and practice no-code model evaluation skills.
+This project introduces a Hungarian benchmark evaluation.
+
 It contains 100 metaphorical, trivia-style riddles in Hungarian, covering culture, history, sports, geography, daily life, politics, literature, and the arts.
 
 The riddles were intentionally created to test factual accuracy, reasoning clarity, and language quality across multiple LLMs.
