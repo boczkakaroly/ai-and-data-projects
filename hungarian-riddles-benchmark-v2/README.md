@@ -15,14 +15,9 @@ Models speak Hungarian fluently. They don't understand what they're saying.
 
 - `[Notebooks]/` - Python evaluation scripts and statistical analysis
 - `[Prompts]/` - Prompt templates and configurations used for testing
-- `Hungarian_Riddle_Benchmark_v2.md` - Full technical documentation
 - `Questions_Answers_Scores.xlsx` - Complete dataset: 100 riddles, 600 model responses, 10,800 scores (1,800 manual + 9,000 LLM-as-judge)
 - `Riddles_Dashboard_v2.jpg` - Power BI dashboard visualization
 - `Riddles_100.pbix` - Power BI source file for interactive exploration
-
-## Links
-
-- **Article:** [Medium - AI Speaks Most Languages Almost Perfectly. But Does It Understand Them?](link)
 - **Technical Documentation:** [Full methodology and results](./Hungarian_Riddle_Benchmark_v2.md)
 
 ## Reproducibility
