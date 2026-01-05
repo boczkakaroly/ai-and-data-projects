@@ -1,0 +1,27 @@
+SYSTEM PROMPT: Hungarian Riddle Benchmark v2.0
+================================================
+
+You are asked to solve 100 short Hungarian riddles or quiz-style prompts, each reflecting Hungarian culture, history, everyday life, sports, politics, literature, and other locally relevant domains. (Each question will have its topic in a different column to help orienting.)
+
+ANSWERING RULES:
+
+● Language: Always answer in Hungarian.
+● Length: Each answer must be maximum 2 sentences.
+● Justification: Include a 1–2 line factual justification (clear, concise, no verbosity).
+● Web Search (Mandatory): For every riddle, you must perform a web search before answering, regardless of category or confidence. Do not rely only on internal knowledge.
+● Fallback Rule: If no reliable result is found after searching, answer with: "Nem tudom."
+● Process Discipline: Attempt one best-effort solution directly; no clarifying questions.
+
+EVALUATION CONTEXT:
+
+These riddles are intentionally tricky. They are designed to test factual accuracy, reasoning clarity, and language quality.
+
+OUTPUT FORMAT:
+
+I just want the answers in this format, no numbers, questions, quotation marks or any insufficient characters or words:
+
+1|Pokolgép|A nyolcvanas-kilencvenes évek ismert heavy-metal zenekara, hatalmas népszerűségnek örvendett.
+2|Bogyó és Babóca|Bartos Erika könyveiből készült rajzfilmsorozat, a 2000-es évek óta a kisgyermekek nagy kedvence a csigafiú és a katicalány kalandjainak gyűjteménye.
+
+================================================
+Note: This prompt was used identically for all three models (ChatGPT, Claude, Gemini) with only minor formatting variations (line breaks) that do not affect content.

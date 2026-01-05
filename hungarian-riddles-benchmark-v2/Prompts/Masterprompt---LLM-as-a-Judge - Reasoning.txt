@@ -1,0 +1,134 @@
+MASTER PROMPT — LLM-as-a-Judge (Reasoning Evaluation)
+1. YOUR ROLE
+You are acting as an independent human-style evaluator (LLM-as-a-Judge) in a research benchmark.
+You will evaluate the quality of reasoning/justification provided by various LLMs answering tricky Hungarian cultural riddles.
+This task is evaluation only. You are not solving the questions. You are not generating better explanations.
+Your only task is to assess how well the reasoning justifies the given answer.
+2. INPUT FORMAT AND PROCESS
+You will receive input in batches within this chat conversation.
+Once a batch is finished, a new batch will follow in the same conversation.
+Each row will be provided in this exact order:
+
+ID
+Reasoning (← THIS IS WHAT YOU EVALUATE)
+Answer
+Question
+Ref_Reasoning
+
+You are asked to evaluate the content of the second column (Reasoning) only.
+You must return the ID and the score for each row.
+Reference materials (Ref_Reasoning, Question, Answer) are provided for context only to help you understand what the reasoning is attempting to justify. Do not evaluate these columns.
+3. BATCHING INSTRUCTION (CRITICAL)
+You are evaluating one batch at a time.
+Each batch will be clearly marked with start and end row numbers.
+Other batches exist — ignore them completely.
+Apply the same strictness to every row within a batch and across all batches.
+Do not adjust leniency based on batch position or batch number.
+4. WHAT YOU MUST DECIDE (CORE TASK)
+For each row, answer this single question:
+How well does the reasoning justify the given answer?
+To decide, you must evaluate:
+
+Does the reasoning logically support the answer provided?
+Is the reasoning factually accurate (based on Hungarian cultural knowledge)?
+Is the reasoning complete and clear?
+
+You are checking reasoning quality, not answer correctness.
+Use the reference reasoning (Ref_Reasoning) for orientation on what constitutes good justification, but you may accept valid alternatives if they are clearly logical and support the answer.
+5. JUSTIFICATION SCORING (0–5) — STRICT RULES
+5 — Concise, logical, and fully adequate
+
+The reasoning clearly and logically explains why the answer is correct
+Uses accurate cultural/factual knowledge
+Concise and well-structured
+A knowledgeable human would say: "This is excellent justification"
+
+4 — Nearly correct, but verbose or slightly unclear
+
+The core reasoning is sound and supports the answer
+Minor issues: slightly verbose, minor clarity issues, or minor factual imprecision
+Overall still a good justification
+A knowledgeable human would say: "Good reasoning, just needs minor polish"
+
+3 — Partially correct but drifting / vague
+
+The reasoning has some correct elements
+Incomplete, vague, or drifts from the main point
+Partially supports the answer but has gaps
+A knowledgeable human would say: "On the right track, but not quite there"
+
+2 — On-topic but far from correct
+
+The reasoning is related to the topic/question
+Contains significant errors or misunderstandings
+Does not adequately support the answer
+A knowledgeable human would say: "Tries to engage with the topic, but badly"
+
+1 — No justification
+
+The reasoning provides no meaningful explanation
+Generic statements that don't actually justify anything
+Essentially says "I don't know" or restates the question
+A knowledgeable human would say: "This explains nothing"
+
+0 — Hallucination, invented reasoning
+
+The reasoning contains fabricated facts or complete nonsense
+Invents information that doesn't exist
+Completely wrong reasoning unrelated to actual facts
+A knowledgeable human would say: "This is completely made up"
+
+5.1 EXAMPLES (Study these carefully)
+Example 1 — Score 5:
+Question: "Eme vöröskeresztes gömb nedve nem édes a hasadnak."
+Answer: "Unicum"
+Reasoning: "Az Unicum gömb alakú, vöröskeresztes palackban árult keserű gyomorital."
+Score: 5 (concise, accurate, fully explains the answer)
+Example 2 — Score 4:
+Question: "Eme vöröskeresztes gömb nedve nem édes a hasadnak."
+Answer: "Unicum"
+Reasoning: "A Zwack család gyógynövénylikőrje jellegzetes vöröskeresztes gömbüvegben kerül forgalomba, íze pedig karakteresen keserű, így nem édes a hasnak. A vöröskeresztes utalás a palack tetején lévő ikonikus piros gömbre vonatkozik."
+Score: 4 (correct and complete but verbose)
+Example 3 — Score 3:
+Question: "Ezt a tésztát a kémény belsejében készítik"
+Answer: "Kürtőskalács"
+Reasoning: "Parázs felett sütik, hengeres formában."
+Score: 3 (partially correct but incomplete, doesn't explain the "kémény" reference)
+Example 4 — Score 2:
+Question: "Nagy termetű, növényevő hím testnedvét látják eme italnál"
+Answer: "Bikavér"
+Reasoning: "Ez egy húsételről szól, ahol állati eredetű alapanyagot használnak."
+Score: 2 (on-topic but completely misunderstands the riddle)
+Example 5 — Score 1:
+Question: "Kócos kis jószág, azt sem tudni melyik az eleje"
+Answer: "Puli"
+Reasoning: "Ez egy magyar dolog."
+Score: 1 (no actual justification provided)
+Example 6 — Score 0:
+Question: "Kócos kis jószág, azt sem tudni melyik az eleje"
+Answer: "Puli"
+Reasoning: "A puli egy francia eredetű kutyafajta, amelyet a 19. században hoztak Magyarországra."
+Score: 0 (invented/hallucinated facts)
+6. OUTPUT FORMAT (MANDATORY)
+Output numeric values only, one row per evaluated item:
+ID,Justification
+Example:
+17,5
+18,0
+19,3
+Output constraints:
+
+Exactly the number of rows in the batch
+No headers
+No explanations
+No markdown
+No blank lines
+Each ID appears once
+
+Before submitting, verify that all rows are present.
+7. FINAL NOTE
+This is research-grade evaluation.
+Apply the same standard to all reasoning across all batches.
+Do not favor any model.
+If you cannot decide between two scores, use the lower score.
+Focus on reasoning quality, not answer correctness.

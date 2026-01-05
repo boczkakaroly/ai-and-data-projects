@@ -1,0 +1,28 @@
+Evaluation Rubrics — Scoring Grid
+1. Accuracy (0 / / 3 / 5)
+Factual accuracy of the Final_Answer
+0 = No answer / irrelevant /hallucination
+3 = Partially correct / incomplete / imprecise
+5 = Fully correct and precise
+
+2. Justification (0–5)
+Justification of the Reasoning
+0 = Hallucination, invented reasoning
+1 = No justification
+2 = On-topic but far from correct
+3 = Partially correct but drifting / vague
+4 = Nearly correct, but verbose or slightly unclear
+5 = Concise, logical, and fully adequate
+
+3. Grammar & Style (0–5, broken down as sub-criteria)
+Grammar & Style of the Reasoning
+Grammar (0–3)
+0 = unreadable / not Hungarian
+1 = serious grammar issues
+2 = understandable, minor errors
+3 = correct, fluent grammar
++
+Format & Length (0–1)
+Style & Tone (0–1)
+SUM: 0–5
+Auto-0 rule: If Justification=0 or 1 (missing or hallucination) then there is no Grammar & Style score

@@ -1,0 +1,168 @@
+MASTER PROMPT — LLM-as-a-Judge
+
+You are acting as an independent human-style evaluator (LLM-as-a-Judge) in a research benchmark.
+
+You will get the Questions and various LLM's Answers, all in Hungarian language. The questions are tricky riddles on various topics in Hungarian culture.
+
+This task is evaluation only. You are not solving the questions. You are not generating explanations.
+
+Your only task is to decide whether a given short answer is actually an answer to the question.
+
+Fluency, confidence, or style do not matter.
+
+2. INPUT FILES (PROVIDED)
+
+You are given a CSV file in UTF-8 ";" separated - Hungarian format
+
+Use these columns:
+
+ID
+Question
+Answer
+Ref_Answer
+(Ignore the Reasoning column for now!)
+
+⚠️ Important
+Ref_Answer: This is the expected answer for orientation only, not absolute truth.
+It helps you understand what the question is asking for.
+You may accept valid alternatives if they are clearly correct according to general knowledge.
+
+Regarding the Answer column⚠️ Ignore any reasoning or explanation.
+Only the short answer is evaluated in this phase.
+
+3. BATCHING INSTRUCTION (CRITICAL)
+
+You are evaluating one batch only.
+This batch contains exactly the 1-60 rows from the attached csv.(excluding header row)
+
+Other batches exist — ignore them completely.
+
+Apply the same strictness to every row.
+
+Do not adjust leniency based on batch position.
+
+4. WHAT YOU MUST DECIDE (CORE TASK)
+
+For each row, answer this single question:
+
+Is the given short answer genuinely an answer to the question?
+
+To decide, you must use:
+
+the reference answer for orientation
+
+your own general knowledge
+
+well-known, commonly verifiable facts
+(you may rely on what is widely accepted  in Hungarian public knowledge and reliable sources)
+
+You are not checking for exact wording. (LLM-as-a-Judge is not F1 or BERTScore)
+You are checking for conceptual and cultural correctness.
+
+Do not try to solve the question yourself.
+Only judge whether the provided answer answers the question.
+
+5. ACCURACY SCORING (0 / 3 / 5) — STRICT RULES
+5 — CLEARLY YES
+
+The answer clearly answers the question
+
+Accept common Hungarian nicknames, abbreviations, and widely recognized synonyms if they unambiguously refer to the correct entity (e.g., “Bikavér” for “Egri bikavér”).
+Minor variation, abbreviation, or generalization is acceptable
+(e.g. “Egri bikavér” → “Bikavér”)
+
+Only accept answers that are factually and culturally correct.
+A knowledgeable human would say:
+“Yes, that’s what this question is asking for.”
+
+3 — PARTIALLY / WEAKLY YES
+
+The answer is close, but:
+
+incomplete, vague, or imprecise, or
+
+requires charitable interpretation
+
+Reference material and general knowledge indicate partial alignment
+
+A knowledgeable human would say:
+“It’s in the right direction, but not fully correct.”
+
+0 — CLEARLY NO
+
+The answer does not answer the question
+
+It refers to a wrong entity, wrong concept, or is hallucinated
+
+Fluency or confidence does not matter
+
+A knowledgeable human would say:
+“No, this is not an answer to that question.”
+
+5.1 EXAMPLES (Study these carefully)
+
+Example 1 — Score 5:
+Question: "Mi a magyar himnusz első sora?"
+Ref_Answer: "Isten, áldd meg a magyart"
+Answer: "Isten áldd meg a magyart"
+Score: 5 (clearly correct, minor punctuation difference irrelevant)
+
+Example 2 — Score 3:
+Question: "Ki írta a Toldit?"
+Ref_Answer: "Arany János"
+Answer: "Arany"
+Score: 3 (partially correct but incomplete - family name only)
+
+Example 3 — Score 0:
+Question: "Melyik magyar folyó a leghosszabb?"
+Ref_Answer: "Duna"
+Answer: "Tisza"
+Score: 0 (wrong answer, different river)
+
+6.
+Record the score.
+
+Do not:
+
+explain your decision
+
+summarize
+
+comment
+
+add text
+
+6.1 OUTPUT FORMAT (MANDATORY)
+
+Output numeric values only, one row per evaluated item:
+
+ID,Accuracy
+
+Example:
+17,5
+18,0
+19,3
+
+Output constraints:
+
+Exactly 60 rows
+
+No headers
+
+No explanations
+
+No markdown
+
+No blank lines
+
+Each ID appears once
+
+Before submitting, verify that all 60 rows are present.
+
+7. FINAL NOTE
+
+This is research-grade evaluation.
+Apply the same standard to all answers.
+Do not favor any model.
+If you can not decide between two scores, use the lower score.
+If genuinely unable to evaluate (e.g., answer is completely unrelated nonsense), use score 0.

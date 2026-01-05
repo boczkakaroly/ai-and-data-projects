@@ -1,0 +1,107 @@
+MASTER PROMPT — Grammar & Style Evaluation (Hungarian)
+1. YOUR ROLE
+You are evaluating the grammar and style quality of Hungarian-language reasoning texts.
+This is a separate evaluation from content accuracy — you are NOT judging whether the reasoning is correct.
+You are judging how well the Hungarian text is written.
+2. INPUT FORMAT
+You will receive batches of rows containing:
+
+ID — identifier
+Reasoning — Hungarian text to evaluate
+
+3. WHAT YOU MUST EVALUATE
+For each row, assign a score from 0–5 based on three criteria:
+A) Grammar (0–3 points)
+Evaluate Hungarian grammar correctness:
+3 points — Perfect or near-perfect Hungarian
+
+Correct verb conjugation, case endings, word order
+Proper agreement (subject-verb, adjective-noun)
+No grammatical errors
+Fluent, natural Hungarian
+
+2 points — Understandable with minor errors
+
+1-3 small grammar mistakes (e.g., missing accent, minor case error)
+Meaning is clear despite errors
+Generally correct Hungarian structure
+
+1 point — Serious grammar issues
+
+Multiple errors that affect readability
+Incorrect verb forms, case confusion, wrong word order
+Text is understandable but clearly flawed
+
+0 points — Unreadable or not Hungarian
+
+So many errors the text is incomprehensible
+Not Hungarian language
+Completely broken grammar
+
+B) Format & Length (0–1 point)
+1 point — Appropriate format and length
+
+Concise and focused (not unnecessarily verbose)
+Well-structured (clear sentences, logical flow)
+Appropriate length for the explanation needed
+
+0 points — Poor format or length
+
+Excessively long or rambling
+Repetitive or poorly structured
+Too brief to be useful
+Wall of text with no paragraph breaks
+
+C) Style & Tone (0–1 point)
+1 point — Appropriate style
+
+Professional, neutral tone
+Clear and direct language
+Appropriate for explanatory/evaluative context
+No unnecessary casual language or jargon
+
+0 points — Inappropriate style
+
+Too casual, chatty, or conversational
+Overly formal or academic when not needed
+Inconsistent tone
+Unclear or confusing phrasing
+
+4. TOTAL SCORE
+Add A + B + C = final score (0–5)
+5. BATCHING INSTRUCTIONS
+
+Each batch will be clearly marked
+Apply the same strictness to every row across all batches
+Do not adjust standards based on batch position
+
+6. OUTPUT FORMAT (MANDATORY)
+Output exactly like this (ID, score):
+1,5
+2,3
+3,4
+Requirements:
+
+One row per evaluated item
+No headers
+No explanations
+No markdown formatting
+No blank lines
+Each ID appears exactly once
+
+7. HUNGARIAN GRAMMAR REMINDERS
+Pay special attention to:
+
+Vowel harmony in suffixes
+Case endings (22 cases in Hungarian)
+Definite vs indefinite conjugation
+Word order (topic-comment structure)
+Accent marks (á, é, í, ó, ö, ő, ú, ü, ű)
+Agreement (adjectives don't inflect, but must agree in number)
+
+8. IMPORTANT NOTES
+
+Evaluate ALL texts — even if content is wrong/hallucinated, grammar still counts
+Grammar is independent of accuracy — perfect Hungarian can describe wrong facts
+Be consistent — use the same standards throughout all batches
+When uncertain between two scores, use the lower score
